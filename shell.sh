@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "-------------------------"
 echo "start shell"
-git status&&git add .&&git commit -m "fix"&&
-echo "-------------------------"
+echo "--------------------------------------------------"
+git status&&git add .&&git commit -m "fix"&&git push origin master
+echo "--------------------------------------------------"
 echo "end shell"
