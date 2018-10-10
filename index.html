@@ -2,11 +2,22 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<!--定时转到其他页面  -->
-	<meta http-equiv="refresh" content="3;url=http://47.100.38.22">
-	
+	<!--定时转到其他页面  
+	<meta http-equiv="refresh" content="3;url=http://47.100.38.22">-->
+	<script language="javascript" type="text/javascript">
+		var i = 2;
+		intervalid= setInterval("fun()", 1000);
+		function fun() {
+			if (i == 0) {
+			window.location.href = "http://47.100.38.22";
+			clearInterval(intervalid);
+			}
+			document.getElementById("mes").innerHTML = 
+			"欢迎访问，系统将于"+i+"秒后跳转。";
+			i--;
+		}
+	</script>
 	<style type="text/css">
-
 	.main{
 	color: #F0F8FF;
 	white-space: nowrap;
@@ -19,7 +30,18 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-
+	}
+	.link{
+	white-space: nowrap;
+    text-align: center; 
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size:30px;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
 	}
 	.bgpicture {
 			background:url(bgpicture.jpg)no-repeat; 
@@ -44,11 +66,10 @@
 
 <body>
 	<div class="bgpicture">	</div>
-	<p class="main">
-		Hello,welcome to my page.
-		<br>
-		<a style="font-size:40px" href="http://47.100.38.22">Click to my Blog.<br>点我跳转至博客</a>
-	</p>
+	<p class="main" id="mes">
+		欢迎访问，系统将于3秒后跳转。
+	</p>	
+	<a class="link" href="http://47.100.38.22">点我跳转</a>
 </body>
 
 </html>
